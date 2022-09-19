@@ -5,6 +5,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const authUser = require("./Routes/auth");
 const cartRoute = require("./Routes/cart");
+const paymentRoute = require("./Routes/payment");
 
 dotenv.config();
 
@@ -28,6 +29,7 @@ app.get("/", (request, response) => {
 
 app.use("/api/auth", authUser);
 app.use("/api/cart", cartRoute);
+app.use("/api/payment", paymentRoute);
 
 //Listen Port
 app.listen(process.env.PORT || 3001, () => {
